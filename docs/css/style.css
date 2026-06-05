@@ -120,7 +120,6 @@ main {
     }
 
     .tier-content {
-        font-size: 0.95rem;
-        margin-left: -20%;
+        display: none;
     }
 }
