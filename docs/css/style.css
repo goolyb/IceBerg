@@ -70,6 +70,17 @@ main {
     display: flex;
     align-items: center;
     padding: 0 22% 0 4%;
+    position: relative;
+}
+
+.tier .item {
+    position: absolute;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .tier-content {
