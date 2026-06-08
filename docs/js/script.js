@@ -31,3 +31,18 @@ document.addEventListener('click', () => {
         activeItem = null;
     }
 })
+
+// Reveal each tier as it scrolls into view, staggering its items.
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const tier = entry.target;
+        tier.querySelectorAll('.item').forEach((item, i) => {
+            item.style.animationDelay = `${i * 80}ms`;
+        });
+        tier.classList.add('revealed');
+        revealObserver.unobserve(tier);
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.tier').forEach(tier => revealObserver.observe(tier));

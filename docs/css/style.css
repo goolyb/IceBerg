@@ -177,6 +177,35 @@ main {
     font-size: 1rem;
 }
 
+/* Scroll-reveal: tiers and their labels rise into view as you scroll.
+   JS adds .revealed to a .tier when it enters the viewport. */
+@keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.tier .item,
+.tier-content {
+    opacity: 0;
+}
+
+.tier.revealed .item,
+.tier.revealed .tier-content {
+    animation: rise 0.55s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tier .item,
+    .tier-content {
+        opacity: 1;
+    }
+
+    .tier.revealed .item,
+    .tier.revealed .tier-content {
+        animation: none;
+    }
+}
+
 @media (max-width: 640px) {
     .site-header {
         flex-direction: column;
