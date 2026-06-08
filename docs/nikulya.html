@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кружок никули</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/kruzhok.css">
+</head>
+<body>
+    <a class="back" href="index.html">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Назад к айсбергу</span>
+    </a>
+
+    <main>
+        <div class="krug" id="krug">
+            <video id="video" src="media/kruzhok.mp4" autoplay loop muted playsinline></video>
+            <button class="sound" id="sound" aria-label="Звук">
+                <i class="fa-solid fa-volume-xmark"></i>
+            </button>
+        </div>
+        <p class="caption">там никуля просила деньги на танк в вартандере мужским голосом</p>
+        <p class="hint">тапни по кружочку, чтобы включить звук</p>
+    </main>
+
+    <script>
+        const video = document.getElementById('video');
+        const soundBtn = document.getElementById('sound');
+        const icon = soundBtn.querySelector('i');
+
+        function toggleSound() {
+            video.muted = !video.muted;
+            if (!video.muted) video.play();
+            icon.className = video.muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
+        }
+
+        document.getElementById('krug').addEventListener('click', toggleSound);
+    </script>
+</body>
+</html>

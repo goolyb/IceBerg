@@ -79,6 +79,16 @@ body {
     font-size: 1.5rem;
 }
 
+.cat-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cat-link .fa-paw {
+    font-size: 1.5rem;
+}
+
 main {
     max-width: 1100px;
     margin: 2rem auto;
