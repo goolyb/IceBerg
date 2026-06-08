@@ -177,8 +177,6 @@ main {
     font-size: 1rem;
 }
 
-/* Scroll-reveal: tiers and their labels rise into view as you scroll.
-   JS adds .revealed to a .tier when it enters the viewport. */
 @keyframes rise {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -254,7 +252,6 @@ main {
         padding: 0 0.5rem;
     }
 
-    /* Keep the iceberg at its natural proportions (no vertical stretch). */
     .iceberg {
         width: 100%;
         grid-template-rows: repeat(8, 1fr);
@@ -264,8 +261,6 @@ main {
         padding: 0 6% 0 2%;
     }
 
-    /* Wider, compact labels so long names wrap to 1–2 lines instead of a
-       tall column — that's what keeps them from overlapping. */
     .tier .item {
         font-size: 0.48rem;
         line-height: 1.15;
@@ -273,15 +268,11 @@ main {
         max-width: 62%;
     }
 
-    /* Keep the tapped/focused label above the rest so its tooltip is readable. */
     .tier .item.active,
     .tier .item:focus {
         z-index: 50;
     }
 
-    /* Show the tooltip BELOW the label on mobile so it never collides
-       with the sticky header for top-tier items. Styled as a floating
-       card with an arrow so it reads as a popover over the other labels. */
     .tier .item::after {
         max-width: min(78vw, 250px);
         font-size: 0.62rem;
@@ -296,7 +287,6 @@ main {
         box-shadow: 0 6px 22px rgba(0, 0, 0, 0.65);
     }
 
-    /* Upward arrow connecting the card to its label. */
     .tier .item::before {
         content: "";
         position: absolute;

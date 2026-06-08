@@ -32,7 +32,6 @@ document.addEventListener('click', () => {
     }
 })
 
-// Reveal each tier as it scrolls into view, staggering its items.
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) return;
