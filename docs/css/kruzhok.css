@@ -11,6 +11,14 @@ body {
     align-items: center;
 }
 
+h1{
+    font-family: "Russo One", sans-serif;
+    font-size: 3.5rem;
+    color: #cdd6f4;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
 .back {
     align-self: flex-start;
     margin: 1.25rem 1.5rem;
@@ -27,11 +35,11 @@ body {
 
 main {
     flex: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
     padding: 1rem 1.25rem 3rem;
     text-align: center;
 }
@@ -41,6 +49,7 @@ main {
     width: min(78vw, 360px);
     aspect-ratio: 1;
     cursor: pointer;
+    margin-top: 7%;
 }
 
 .krug video {
@@ -51,6 +60,7 @@ main {
     background: #000;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
     border: 3px solid rgba(205, 214, 244, 0.35);
+    display: flex;
 }
 
 .sound {
@@ -72,9 +82,95 @@ main {
 
 .caption {
     max-width: 30ch;
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.4;
     color: #cdd6f4;
 }
 
-.hint { font-size: 0.8rem; color: #8a93b8; }
+.hint {
+    font-size: 0.8rem;
+    color: #8a93b8;
+    margin-top: -0.5rem;
+}
+
+.reader {
+    align-self: center;
+    width: 100%;
+    max-width: 920px;
+    border-radius: 20px;
+    margin: 2% 20px 0;
+    height: 70vh;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.reader iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.reader iframe.loading {
+    opacity: 0;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.tabs button {
+    font-family: "Russo One", sans-serif;
+    font-size: 0.95rem;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 10px;
+    margin-top: 1.5rem;
+    color: #cdd6f4;
+    background: rgba(205, 214, 244, 0.08);
+    border: 1px solid rgba(205, 214, 244, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tabs button:hover {
+    background: rgba(205, 214, 244, 0.2);
+    border-color: #cdd6f4;
+    transform: translateY(-2px);
+}
+
+.tabs button.active{
+    background: rgba(205, 214, 244, 0.2);
+    border-color: #cdd6f4;
+    transform: translateY(-2px);
+}
+
+.download {
+    display: flex;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    margin-top: 30px;
+    padding: 0.7em 1.4em;
+    background: #284972;
+    box-shadow: 0 0 20px rgba(74, 163, 223, 0.3);
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+}
+
+.fa-solid.fa-box-archive{
+    display: inline-flex;
+    margin-right: 7px;
+    align-items: center;
+}
+
+.download:hover{
+    transform: scale(1.03);
+}
