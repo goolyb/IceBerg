@@ -37,3 +37,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Chat export — видео исключаем (тяжёлые, >100MB блокирует push) ###
+docs/ChatExport_2026-06-04/video_files/
+docs/ChatExport_2026-06-04/round_video_messages/

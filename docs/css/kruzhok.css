@@ -13,10 +13,11 @@ body {
 
 h1{
     font-family: "Russo One", sans-serif;
-    font-size: 3.5rem;
+    font-size: clamp(1.6rem, 8vw, 3.5rem);
     color: #cdd6f4;
     margin: 0;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .back {
@@ -109,7 +110,7 @@ main {
     height: 100%;
     border: 0;
     border-radius: 20px;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.2s ease;
 }
 
 .reader iframe.loading {
@@ -173,4 +174,26 @@ main {
 
 .download:hover{
     transform: scale(1.03);
+}
+
+.disclaimer {
+    max-width: 600px;
+    margin: 2.5rem auto 1.5rem;
+    padding: 0 1rem;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: #5a6489;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    main { padding: 1rem 0.5rem 3rem; }
+    .reader { margin: 2% 8px 0; }
+    .reader iframe { zoom: 0.8; }
+    .download { font-size: 1rem; }
+    .tabs{
+        gap: 3px;
+        padding: 0 5px;
+        min-width: 10px;
+    }
 }

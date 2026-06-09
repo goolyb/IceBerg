@@ -55,6 +55,11 @@
 
     </main>
 
+    <footer class="disclaimer">
+        Вся информация собрана из открытых источников и носит исключительно развлекательный характер.
+        Материалы не преследуют цели кого-либо оскорбить, опорочить или разжечь вражду.
+    </footer>
+
     <script>
         const video = document.getElementById('video');
         const soundBtn = document.getElementById('sound');
@@ -63,21 +68,23 @@
         const tabs = document.getElementById('tabs');
 
         frame.addEventListener('load', () => frame.classList.remove('loading'));
-        tabs.addEventListener('click', e => {
-            frame.classList.add('loading')
-            frame.src = 'ChatExport_2026-06-04/' + file;
-            frame.addEventListener('load', () => frame.classList.remove('loading'))
-        })
 
         function toggleSound() {
             video.muted = !video.muted;
             if (!video.muted) video.play();
             icon.className = video.muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
         }
+        document.getElementById('krug').addEventListener('click', () => {
+            video.paused ? video.play() : video.pause();
+        });
         document.querySelector('.tabs').addEventListener('click', (e) => {
+            if (e.target.tagName !== 'BUTTON') return;
             const n = e.target.textContent;
             const file = n === '1' ? 'messages.html' : 'messages' + n + '.html';
-            document.getElementById('reader').src = 'ChatExport_2026-06-04/' + file;
+            frame.classList.add('loading');
+            setTimeout(() => {
+                frame.src = 'ChatExport_2026-06-04/' + file;
+            }, 400);
             const activeButton = document.getElementById('btn-' + n)
 
             document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
@@ -86,7 +93,10 @@
         });
 
 
-        document.getElementById('krug').addEventListener('click', toggleSound);
+        document.getElementById('sound').addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSound();
+        });
     </script>
 </body>
 </html>
